@@ -4,53 +4,95 @@
   <meta charset="UTF-8">
   <title>Interactive Options | Soluciones Digitales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/png" href="logo.png">
   <style>
-    body { background: #f5f6fa; font-family: 'Segoe UI', Arial, sans-serif; margin: 0; }
-    .header {
-      background: linear-gradient(90deg, #185a9d 0%, #43cea2 100%);
-      color: #fff;
-      padding: 48px 0 36px 0;
-      text-align: center;
-      border-radius: 0 0 30px 30px;
-      box-shadow: 0 4px 16px #0002;
+    body {
+      background: #101926 url('bg-pattern.png') repeat; /* Puedes usar un PNG/SVG de líneas sutiles o dejar solo el color */
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      color: #eafaf1;
     }
-    .header h1 { font-size: 2.7em; margin-bottom: 10px; letter-spacing: 1px; }
-    .header p { font-size: 1.2em; margin: 0; }
-    .container { max-width: 900px; margin: 40px auto; background: #fff; border-radius: 18px; box-shadow: 0 4px 16px #0001; padding: 35px 30px; }
-    h2 { color: #185a9d; margin-top: 0; }
-    .servicios { display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 30px; }
+    .header {
+      text-align: center;
+      padding: 60px 0 30px 0;
+      background: none;
+    }
+    .header img {
+      width: 160px;
+      max-width: 90vw;
+      margin-bottom: 18px;
+      filter: drop-shadow(0 4px 24px #43cea2aa);
+    }
+    .header h1 {
+      font-size: 2.7em;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      color: #fff;
+      text-shadow: 0 2px 12px #185a9d88;
+    }
+    .header p {
+      font-size: 1.2em;
+      margin: 0;
+      color: #b2f0c0;
+      text-shadow: 0 1px 6px #185a9d44;
+    }
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: rgba(20,30,50,0.92);
+      border-radius: 18px;
+      box-shadow: 0 4px 24px #0003;
+      padding: 35px 30px;
+    }
+    h2 { color: #43cea2; margin-top: 0; }
+    .servicios {
+      display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 30px;
+    }
     .servicio {
       flex: 1 1 260px;
-      background: #f7f9fa;
+      background: #16213e;
       border-radius: 12px;
       padding: 22px 18px;
-      box-shadow: 0 2px 8px #0001;
+      box-shadow: 0 2px 8px #0002;
       min-width: 220px;
+      color: #eafaf1;
+      border-left: 5px solid #43cea2;
     }
-    .servicio h3 { margin-top: 0; color: #27ae60; }
-    .contacto { background: #eafaf1; border-radius: 10px; padding: 18px 15px; color: #263859; margin-top: 30px; }
-    .contacto a { color: #185a9d; text-decoration: none; font-weight: bold; }
+    .servicio h3 { margin-top: 0; color: #43cea2; }
+    .contacto {
+      background: #1b263b;
+      border-radius: 10px;
+      padding: 18px 15px;
+      color: #eafaf1;
+      margin-top: 30px;
+      box-shadow: 0 2px 8px #43cea233;
+    }
+    .contacto a {
+      color: #43cea2;
+      text-decoration: none;
+      font-weight: bold;
+    }
     .contacto a:hover { text-decoration: underline; }
     .footer {
       text-align: center;
-      color: #888;
+      color: #b2f0c0;
       font-size: 14px;
       margin: 40px 0 10px 0;
       letter-spacing: 0.5px;
+      text-shadow: 0 1px 6px #185a9d44;
     }
     @media (max-width: 700px) {
       .container { padding: 18px 7px; }
       .servicios { flex-direction: column; gap: 14px; }
+      .header img { width: 90px; }
     }
   </style>
 </head>
 <body>
   <div class="header">
-  <img src="logo.png" alt="Logo Interactive Options" style="height:70px;margin-bottom:10px;">
-  <h1>Interactive Options</h1>
-  <p>Soluciones digitales, desarrollo web y automatización para tu negocio</p>
-</div>
+    <img src="logo.png" alt="Logo Interactive Options">
+    <h1>Interactive Options</h1>
+    <p>Interactive Digital Solutions</p>
+  </div>
   <div class="container">
     <h2>¿Quiénes somos?</h2>
     <p>
@@ -93,11 +135,7 @@
     </div>
   </div>
   <div class="footer">
-    &copy; <?=date('Y')?> Interactive Options. Todos los derechos reservados.
+    &copy; 2024 Interactive Options. Todos los derechos reservados.
   </div>
 </body>
-
 </html>
-
-
-
