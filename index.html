@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <title>Interactive Options | Soluciones Digitales</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Favicon (icono de pestaña) -->
+  <!-- Favicon -->
   <link rel="icon" type="image/png" href="logo.png">
   <style>
-    body {
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
       background: #101926;
       font-family: 'Segoe UI', Arial, sans-serif;
-      margin: 0;
       color: #eafaf1;
       min-height: 100vh;
       position: relative;
     }
-    /* Borde RGB animado */
     .rgb-border {
       position: fixed;
       top: 0; left: 0; right: 0; bottom: 0;
@@ -42,41 +43,41 @@
     }
     .header {
       text-align: center;
-      padding: 60px 0 30px 0;
+      padding: 48px 0 24px 0;
       background: none;
       position: relative;
       z-index: 10;
     }
     .header img {
-      width: 160px;
-      max-width: 90vw;
+      width: 140px;
+      max-width: 80vw;
       margin-bottom: 18px;
       filter: drop-shadow(0 4px 24px #43cea2aa);
     }
     .header h1 {
-      font-size: 2.7em;
+      font-size: 2.2em;
       margin-bottom: 8px;
       letter-spacing: 1px;
       color: #fff;
       text-shadow: 0 2px 12px #185a9d88;
     }
     .header p {
-      font-size: 1.2em;
+      font-size: 1.1em;
       margin: 0;
       color: #b2f0c0;
       text-shadow: 0 1px 6px #185a9d44;
     }
     .container {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 32px auto 0 auto;
       background: rgba(20,30,50,0.92);
       border-radius: 18px;
       box-shadow: 0 4px 24px #0003;
-      padding: 35px 30px;
+      padding: 28px 24px;
       position: relative;
       z-index: 10;
     }
-    h2 { color: #43cea2; margin-top: 0; }
+    h2 { color: #43cea2; margin-top: 0; font-size:1.3em;}
     .servicios {
       display: flex; flex-wrap: wrap; gap: 24px; margin-bottom: 30px;
     }
@@ -90,7 +91,7 @@
       color: #eafaf1;
       border-left: 5px solid #43cea2;
     }
-    .servicio h3 { margin-top: 0; color: #43cea2; }
+    .servicio h3 { margin-top: 0; color: #43cea2; font-size:1.1em;}
     .contacto {
       background: #1b263b;
       border-radius: 10px;
@@ -154,10 +155,16 @@
       position: relative;
       z-index: 10;
     }
-    @media (max-width: 700px) {
+    @media (max-width: 900px) {
       .container { padding: 18px 7px; }
       .servicios { flex-direction: column; gap: 14px; }
       .header img { width: 90px; }
+    }
+    @media (max-width: 600px) {
+      .header { padding: 30px 0 18px 0; }
+      .container { padding: 10px 2vw; }
+      .servicio { min-width: 0; padding: 16px 8px; }
+      .btn-contacto { font-size: 1em; max-width: 100%; }
     }
   </style>
 </head>
