@@ -6,15 +6,44 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style>
     body {
-      background: #101926 url('bg-pattern.png') repeat; /* Puedes usar un PNG/SVG de líneas sutiles o dejar solo el color */
+      background: #101926;
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       color: #eafaf1;
+      min-height: 100vh;
+      position: relative;
     }
+    /* Borde RGB animado */
+    .rgb-border {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 9999; /* Asegura que esté por encima de todo */
+  pointer-events: none;
+}
+.rgb-border:before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 0;
+  border: 6px solid;
+  border-image: linear-gradient(270deg,#43cea2,#185a9d,#43cea2,#43cea2,#43cea2,#43cea2) 1;
+  animation: rgbmove 4s linear infinite;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+@keyframes rgbmove {
+  0% { border-image-source: linear-gradient(270deg,#43cea2,#185a9d,#43cea2,#43cea2,#43cea2,#43cea2); }
+  25% { border-image-source: linear-gradient(270deg,#185a9d,#43cea2,#43cea2,#43cea2,#43cea2,#43cea2); }
+  50% { border-image-source: linear-gradient(270deg,#43cea2,#43cea2,#185a9d,#43cea2,#43cea2,#43cea2); }
+  75% { border-image-source: linear-gradient(270deg,#43cea2,#43cea2,#43cea2,#185a9d,#43cea2,#43cea2); }
+  100% { border-image-source: linear-gradient(270deg,#43cea2,#185a9d,#43cea2,#43cea2,#43cea2,#43cea2); }
+}
     .header {
       text-align: center;
       padding: 60px 0 30px 0;
       background: none;
+      position: relative;
+      z-index: 2;
     }
     .header img {
       width: 160px;
@@ -42,6 +71,8 @@
       border-radius: 18px;
       box-shadow: 0 4px 24px #0003;
       padding: 35px 30px;
+      position: relative;
+      z-index: 2;
     }
     h2 { color: #43cea2; margin-top: 0; }
     .servicios {
@@ -66,12 +97,51 @@
       margin-top: 30px;
       box-shadow: 0 2px 8px #43cea233;
     }
-    .contacto a {
-      color: #43cea2;
-      text-decoration: none;
-      font-weight: bold;
+    .botones-contacto {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 18px 0 0 0;
+      align-items: center;
     }
-    .contacto a:hover { text-decoration: underline; }
+    .btn-contacto {
+      display: block;
+      width: 100%;
+      max-width: 340px;
+      padding: 14px 0;
+      border-radius: 8px;
+      font-size: 1.08em;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.18s, color 0.18s, transform 0.18s;
+      box-shadow: 0 2px 8px #0001;
+      letter-spacing: 0.5px;
+    }
+    .btn-contacto.email {
+      background: #185a9d;
+      color: #fff;
+    }
+    .btn-contacto.email:hover {
+      background: #43cea2;
+      color: #185a9d;
+    }
+    .btn-contacto.telegram {
+      background: #229ED9;
+      color: #fff;
+    }
+    .btn-contacto.telegram:hover {
+      background: #185a9d;
+      color: #fff;
+    }
+    .btn-contacto.whatsapp {
+      background: #25D366;
+      color: #fff;
+    }
+    .btn-contacto.whatsapp:hover {
+      background: #128C7E;
+      color: #fff;
+    }
     .footer {
       text-align: center;
       color: #b2f0c0;
@@ -79,6 +149,8 @@
       margin: 40px 0 10px 0;
       letter-spacing: 0.5px;
       text-shadow: 0 1px 6px #185a9d44;
+      position: relative;
+      z-index: 2;
     }
     @media (max-width: 700px) {
       .container { padding: 18px 7px; }
@@ -88,6 +160,7 @@
   </style>
 </head>
 <body>
+  <div class="rgb-border"></div>
   <div class="header">
     <img src="logo.png" alt="Logo Interactive Options">
     <h1>Interactive Options</h1>
@@ -123,13 +196,13 @@
     </div>
     <div class="contacto">
       <h2>¿Quieres tu propio sistema?</h2>
-      <p>
-        Escríbenos y cuéntanos tu idea.<br>
-        <b>Email:</b> <a href="mailto:ioptions.ven@gmail.com">ioptions.ven@gmail.com</a><br>
-        <b>Telegram:</b> <a href="https://t.me/Diego_moreno_16" target="_blank">Soporte Por Telegram</a><br>
-        <b>WhatsApp:</b> <a href="https://wa.me/584129769868" target="_blank">+58 4129769868</a>
-      </p>
-      <p>
+      <p>Escríbenos y cuéntanos tu idea.</p>
+      <div class="botones-contacto">
+        <a class="btn-contacto email" href="mailto:ioptions.ven@gmail.com" target="_blank">✉️ Email: ioptions.ven@gmail.com</a>
+        <a class="btn-contacto telegram" href="https://t.me/Diego_moreno_16" target="_blank">💬 Telegram: Soporte Por Telegram</a>
+        <a class="btn-contacto whatsapp" href="https://wa.me/584129769868" target="_blank">📱 WhatsApp: +58 4129769868</a>
+      </div>
+      <p style="margin-top:22px;">
         <b>Interactive Options</b> — Tu aliado en soluciones digitales 🚀
       </p>
     </div>
